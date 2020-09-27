@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta name="viewport" content="width=800, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="3D.css"/>
+</head>
+<body>
+<div id="card">
+	<div id="card-inside">
+		<div class="wrap">
+			<p> A Prayer to bless my way, A wish to lighten my moments,
+				a cheer to perfect my day, A text to say Happy Birthday to me!! </p>
+			<p class="signed">Sagar</p>
+		</div>
+	</div>
+	<div id="card-front">
+		<div class="wrap">
+			<h1> Happy Birthday </h1>
+		</div>
+		<button id="open">&gt;</button>
+		<button id="close">&lt;</button>
+	</div>
+</div>
+<script type="text/javascript">
+(function() {
+  function $(id) {
+    return document.getElementById(id);
+  }
+  var card = $('card'),
+      openB = $('open'),
+      closeB = $('close'),
+      timer = null;
+  console.log('wat', card);
+  openB.addEventListener('click', function () {
+    card.setAttribute('class', 'open-half');
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () {
+      card.setAttribute('class', 'open-fully');
+      timer = null;
+    }, 1000);
+  });
+
+  closeB.addEventListener('click', function () {
+    card.setAttribute('class', 'close-half');
+    if (timer) clearTimerout(timer);
+    timer = setTimeout(function () {
+      card.setAttribute('class', '');
+      timer = null;
+    }, 1000);
+  });
+}());
+</script>
+</body>
+</html>
+	
+		
