@@ -1,0 +1,21 @@
+//PHP Program to find maximum no of A's
+<?php
+function optimal($n)
+{
+    if($n <= 6)
+    {
+        return $n;
+    }
+    $max = 0; $b;
+    for($b = $n-3;$b>=1;$b--)
+    {
+        $curr = ($n-$b-1)*optimal($b);
+        if($curr > $max)
+        {
+            $max = $curr;
+        }
+    }
+    return $max;
+}
+$n = 7;
+echo "Maximum no with ".$n." keystrokes is ".optimal($n);
